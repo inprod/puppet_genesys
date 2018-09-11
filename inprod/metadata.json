@@ -1,0 +1,41 @@
+{
+  "name": "inprod-changeset",
+  "version": "1.0.0",
+  "source": "https://github.com/inprod/puppet_genesys",
+  "author": "InProd Solutions Pty Ltd",
+  "license": "Apache License, Version 2.0",
+  "summary": "UNKNOWN",
+  "description": "Puppet module for performing configuration changes within Genesys PureEngage",
+  "project_page": "https://github.com/inprod/puppet_genesys",
+  "dependencies": [
+
+  ],
+  "types": [
+    {
+      "name": "changeset",
+      "doc": "Manage repos",
+      "properties": [
+        {
+          "name": "ensure",
+          "doc": "The basic property that the resource should be in.\n\nValid values are `present`, `absent`. "
+        }
+      ],
+      "parameters": [
+        {
+          "name": "action",
+          "doc": "Action To Perform\n\n"
+        },
+        {
+          "name": "changesetid",
+          "doc": "Change Set Id\n\n"
+        }
+      ],
+      "providers": [
+        {
+          "name": "ruby",
+          "doc": "In Prod Api"
+        }
+      ]
+    }
+  ]
+}

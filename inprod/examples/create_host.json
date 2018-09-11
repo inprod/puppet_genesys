@@ -1,0 +1,29 @@
+{
+  "action": [
+    {
+      "action": "genesys-create",
+      "action_id": 95,
+      "data": {
+        "folderDbid": {
+          "lookup_method": "query",
+          "value": "path='Environment/Hosts/real'"
+        },
+        "lcaPort": "4999",
+        "name": "agent1.lan",
+        "osType": "CFGRedHatLinux",
+        "ipAddress": "192.168.11.103",
+        "scsDbid": {
+          "lookup_method": "query",
+          "value": "name='SCS4_Primary'"
+        },
+        "state": "CFGEnabled",
+        "type": "CFGNetworkServer"
+      },
+      "object_lookup": null,
+      "object_type": "GenHost"
+    }
+  ],
+  "environment": 1,
+  "name": "create host",
+  "variable": []
+}

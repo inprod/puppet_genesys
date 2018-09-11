@@ -1,0 +1,28 @@
+{
+  "action": [
+    {
+      "action": "genesys-create",
+      "action_id": 96,
+      "data": {
+        "folderDbid": {
+          "lookup_method": "select",
+          "value": "114"
+        },
+        "index": "0",
+        "name": "dsfds",
+        "state": "CFGEnabled",
+        "tenantDbid": {
+          "lookup_method": "select",
+          "value": "1"
+        },
+        "type": "CFGCapacityRule"
+      },
+      "object_lookup": null,
+      "object_type": "GenScript"
+    }
+  ],
+  "enforcing": true,
+  "environment": 1,
+  "name": "Script test",
+  "variable": []
+}
