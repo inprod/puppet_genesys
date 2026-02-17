@@ -103,12 +103,12 @@ See [examples/execute_json.pp](inprod/examples/execute_json.pp). This executes a
 
 ```puppet
 changeset { 'Execute datatable from JSON':
+  ensure      => present,
   action      => 'executejson',
   path        => '/path/to/datatable.json',
   apihost     => 'https://your-company.inprod.io',
   apikey      => 'a1b2c3d4e5f6...your-api-key',
   environment => 'dev',
-  ensure      => present,
 }
 ```
 
@@ -124,12 +124,12 @@ See [examples/execute_yaml.pp](inprod/examples/execute_yaml.pp). Same as above b
 
 ```puppet
 changeset { 'Execute datatable from YAML':
+  ensure      => present,
   action      => 'executeyaml',
   path        => '/path/to/datatable.yaml',
   apihost     => 'https://your-company.inprod.io',
   apikey      => 'a1b2c3d4e5f6...your-api-key',
   environment => 'dev',
-  ensure      => present,
 }
 ```
 
@@ -145,12 +145,12 @@ See [examples/validate_json.pp](inprod/examples/validate_json.pp). This validate
 
 ```puppet
 changeset { 'Validate datatable from JSON':
+  ensure      => present,
   action      => 'validatejson',
   path        => '/path/to/datatable.json',
   apihost     => 'https://your-company.inprod.io',
   apikey      => 'a1b2c3d4e5f6...your-api-key',
   environment => 'dev',
-  ensure      => present,
 }
 ```
 
@@ -166,12 +166,12 @@ See [examples/validate_yaml.pp](inprod/examples/validate_yaml.pp):
 
 ```puppet
 changeset { 'Validate datatable from YAML':
+  ensure      => present,
   action      => 'validateyaml',
   path        => '/path/to/datatable.yaml',
   apihost     => 'https://your-company.inprod.io',
   apikey      => 'a1b2c3d4e5f6...your-api-key',
   environment => 'dev',
-  ensure      => present,
 }
 ```
 
@@ -187,11 +187,11 @@ If you have a changeset already saved in InProd, you can execute it directly by 
 
 ```puppet
 changeset { 'Execute changeset 124':
+  ensure      => present,
   action      => 'execute',
   changesetid => '124',
   apihost     => 'https://your-company.inprod.io',
   apikey      => 'a1b2c3d4e5f6...your-api-key',
-  ensure      => present,
 }
 ```
 
@@ -207,13 +207,13 @@ For long-running changesets, you can increase the timeout and polling interval:
 
 ```puppet
 changeset { 'Long-running execution':
+  ensure        => present,
   action        => 'execute',
   changesetid   => '124',
   apihost       => 'https://your-company.inprod.io',
   apikey        => 'a1b2c3d4e5f6...your-api-key',
   timeout       => 600,
   poll_interval => 10,
-  ensure        => present,
 }
 ```
 
