@@ -20,6 +20,9 @@ jobs:
 
     name: "Puppet ${{ matrix.puppet }} / Ruby ${{ matrix.ruby }}"
 
+    env:
+      PUPPET_GEM_VERSION: ${{ matrix.puppet }}
+
     steps:
       - uses: actions/checkout@v4
 
@@ -30,13 +33,11 @@ jobs:
           bundler-cache: true
           working-directory: inprod
 
-      - name: Run spec tests
-        env:
-          PUPPET_GEM_VERSION: ${{ matrix.puppet }}
-        run: bundle exec rake spec
+      - name: Validate metadata.json
+        run: bundle exec rake metadata_lint
 
       - name: Run puppet-lint
         run: bundle exec rake lint
 
-      - name: Validate metadata.json
-        run: bundle exec rake metadata_lint
+      - name: Run spec tests
+        run: bundle exec rake spec
