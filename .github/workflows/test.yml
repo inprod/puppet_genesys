@@ -1,0 +1,42 @@
+name: Unit Tests
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: inprod
+
+    strategy:
+      matrix:
+        puppet: ['~> 7.0', '~> 8.0']
+        ruby: ['3.1', '3.2']
+
+    name: "Puppet ${{ matrix.puppet }} / Ruby ${{ matrix.ruby }}"
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Ruby ${{ matrix.ruby }}
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby }}
+          bundler-cache: true
+          working-directory: inprod
+
+      - name: Run spec tests
+        env:
+          PUPPET_GEM_VERSION: ${{ matrix.puppet }}
+        run: bundle exec rake spec
+
+      - name: Run puppet-lint
+        run: bundle exec rake lint
+
+      - name: Validate metadata.json
+        run: bundle exec rake metadata_lint
