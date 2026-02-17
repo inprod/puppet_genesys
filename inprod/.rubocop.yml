@@ -1,0 +1,30 @@
+AllCops:
+  TargetRubyVersion: 2.7
+  NewCops: enable
+  Exclude:
+    - 'pkg/**/*'
+    - 'spec/fixtures/**/*'
+    - 'vendor/**/*'
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 30
+
+Metrics/AbcSize:
+  Max: 30
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+    - 'lib/puppet/type/**/*'
+
+Layout/LineLength:
+  Max: 140
+
+Naming/MethodName:
+  Enabled: true
+
+Style/FrozenStringLiteralComment:
+  Enabled: false

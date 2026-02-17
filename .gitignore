@@ -1,2 +1,13 @@
 *.rb~
 .DS_Store
+pkg/
+spec/fixtures/
+.bundle/
+vendor/
+Gemfile.lock
+.vagrant/
+.yardoc/
+coverage/
+log/
+.claude/
+.github/

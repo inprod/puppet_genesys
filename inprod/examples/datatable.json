@@ -1,0 +1,65 @@
+{
+  "action": [
+    {
+      "action": "gencloud-create",
+      "action_id": 7,
+      "data": {
+        "division": {
+          "lookup_method": "empty",
+          "value": null
+        },
+        "name": "Architect Flow Datatable Sample",
+        "records": [
+          {
+            "key": "111",
+            "record": "{\"1\": true, \"2\": \"asdfasf\", \"3\": 0, \"4\": 0}"
+          }
+        ],
+        "referenceKeyLabel": "changethis",
+        "schemaProperties": [
+          {
+            "default": "0",
+            "displayOrder": "3",
+            "key": "3",
+            "title": "integerField",
+            "type": "integer"
+          },
+          {
+            "default": "0.0",
+            "displayOrder": "4",
+            "key": "4",
+            "title": "decimalField",
+            "type": "number"
+          },
+          {
+            "default": "True",
+            "displayOrder": "1",
+            "key": "1",
+            "title": "booleanField",
+            "type": "boolean"
+          },
+          {
+            "default": "Empty String",
+            "displayOrder": "2",
+            "key": "2",
+            "title": "stringField",
+            "type": "string"
+          }
+        ]
+      },
+      "evaluator_script": null,
+      "evaluator_script_searches": [],
+      "iterator_script": null,
+      "iterator_script_ecmascript_standard": "es6",
+      "iterator_script_searches": [],
+      "object_lookup": null,
+      "object_type": "GenCloudFlowsDatatables"
+    }
+  ],
+  "enforcing": true,
+  "environment": 99,
+  "name": "Genesys Cloud - Architect Flow Datatable Creation",
+  "run_in_background": false,
+  "run_type": "stop",
+  "variable": []
+}

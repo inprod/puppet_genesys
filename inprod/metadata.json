@@ -1,41 +1,41 @@
 {
   "name": "inprod-changeset",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "source": "https://github.com/inprod/puppet_genesys",
   "author": "InProd Solutions Pty Ltd",
-  "license": "Apache License, Version 2.0",
-  "summary": "UNKNOWN",
-  "description": "Puppet module for performing configuration changes within Genesys PureEngage",
+  "license": "Apache-2.0",
+  "summary": "Puppet module for performing configuration changes within Genesys PureEngage via the InProd Change Set API",
+  "description": "Puppet module for performing configuration changes within Genesys PureEngage. Supports validating, executing, and executing JSON-based change sets through the InProd API.",
   "project_page": "https://github.com/inprod/puppet_genesys",
-  "dependencies": [
-
+  "tags": [
+    "genesys",
+    "inprod",
+    "changeset",
+    "contact-centre"
   ],
-  "types": [
+  "requirements": [
     {
-      "name": "changeset",
-      "doc": "Manage repos",
-      "properties": [
-        {
-          "name": "ensure",
-          "doc": "The basic property that the resource should be in.\n\nValid values are `present`, `absent`. "
-        }
-      ],
-      "parameters": [
-        {
-          "name": "action",
-          "doc": "Action To Perform\n\n"
-        },
-        {
-          "name": "changesetid",
-          "doc": "Change Set Id\n\n"
-        }
-      ],
-      "providers": [
-        {
-          "name": "ruby",
-          "doc": "In Prod Api"
-        }
-      ]
+      "name": "puppet",
+      "version_requirement": ">= 7.0.0 < 9.0.0"
     }
-  ]
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": ["7", "8", "9"]
+    },
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": ["7", "8", "9"]
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": ["20.04", "22.04", "24.04"]
+    },
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": ["11", "12"]
+    }
+  ],
+  "dependencies": []
 }
